@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useState, useMemo } from "react";
 import axios from "axios";
+import Layout from "@/components/Layout";
 
 function ReactPage() {
   const [counter, setCounter] = useState(0);
@@ -31,7 +32,7 @@ function ReactPage() {
     }
   };
   return (
-    <>
+    <Layout title={"REACT in NEXT"}>
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
@@ -105,7 +106,7 @@ function ReactPage() {
           }
         `}
       </style>
-    </>
+    </Layout>
   );
 }
 
