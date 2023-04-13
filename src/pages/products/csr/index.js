@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Layout from "@/components/Layout";
+import Layout from "components/Layout";
 
 function Products() {
   const [products, setProducts] = useState([]);

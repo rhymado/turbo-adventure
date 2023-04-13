@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useState, useMemo } from "react";
 import axios from "axios";
-import Layout from "@/components/Layout";
+import Layout from "components/Layout";
 
 function ReactPage() {
   const [counter, setCounter] = useState(0);
