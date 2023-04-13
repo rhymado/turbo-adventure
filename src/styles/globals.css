@@ -6,6 +6,14 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  /* from tailwind in react project */
+  --color-primary: hsl(229, 42%, 21%);
+  --color-primary-hover: hsl(229, 42%, 26%);
+  --color-secondary: hsl(9, 97%, 61%);
+  --color-secondary-hover: hsl(9, 97%, 66%);
+  --color-accents: hsl(225, 57%, 97%);
+  --padding-horizontal: 120px;
+  --padding-vertical: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +26,30 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .btn-custom {
+    @apply bg-secondary text-accent w-full md:w-1/2 lg:w-1/3 p-4 rounded-3xl border-none;
+  }
+  .header {
+    @apply flex h-20 items-center px-5 md:px-12 lg:px-30 py-15 md:py-2.5 bg-accent text-primary;
+  }
+  .btn {
+    @apply inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900;
+  }
+}
+
+@layer utilities {
+  .section-heigth {
+    height: calc(100vh - 80px);
+  }
+  .section-min-heigth {
+    min-height: calc(100vh - 80px);
+  }
+  .content-with-header {
+    min-height: calc(100vh - 5rem);
+  }
 }
